@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface CountdownTimerProps {
   targetDate: string;
@@ -24,7 +23,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = +new Date(targetDate) - +new Date();
-      
+
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -42,22 +41,28 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate]);
 
   return (
-    <div className="flex justify-center gap-4">
-      {Object.entries(timeLeft).map(([unit, value]) => (
-        <motion.div
-          key={unit}
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Card className="w-20 h-24 flex flex-col items-center justify-center bg-white">
-            <CardContent className="pt-6">
-              <div className="text-2xl font-bold text-primary">{value}</div>
-              <div className="text-xs text-muted-foreground capitalize">{unit}</div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
+    <div className="w-full max-w-2xl mx-auto my-8">
+      <p className="text-white/70 text-center mb-4">Temps restant pour soumettre votre idée:</p>
+      <div className="grid grid-cols-4 gap-4">
+        {Object.entries(timeLeft).map(([unit, value]) => (
+          <motion.div
+            key={unit}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 text-center">
+              <span className="text-4xl font-bold text-white">
+                {String(value).padStart(2, '0')}
+              </span>
+              <p className="text-sm text-white/50 mt-1 capitalize">
+                {unit}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }
