@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 
+const AGORIZE_URL = "https://www.agorize.com/challenges/innove-ta-banque-2025?t=FmJo696k1moZitGf81GRXw&utm_source=innovation_freelancer&utm_medium=affiliate&utm_campaign=maxime_fr";
+
 interface RegisterModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -46,19 +48,25 @@ export default function RegisterModal({ open, onOpenChange }: RegisterModalProps
 
   const onSubmit = async (data: RegisterForm) => {
     try {
-      // In a real app, this would make an API call
-      console.log("Form submitted:", data);
+      // Show success message
       toast({
-        title: "Inscription réussie! 🎉",
-        description: "Vous recevrez bientôt un email de confirmation."
+        title: "Parfait ! 🎉",
+        description: "Vous allez être redirigé vers la plateforme d'inscription."
       });
+
+      // Close modal
       onOpenChange(false);
       form.reset();
+
+      // Redirect to Agorize after a short delay
+      setTimeout(() => {
+        window.open(AGORIZE_URL, '_blank');
+      }, 1500);
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Erreur",
-        description: "Une erreur est survenue lors de l'inscription."
+        description: "Une erreur est survenue. Veuillez réessayer."
       });
     }
   };
@@ -148,7 +156,7 @@ export default function RegisterModal({ open, onOpenChange }: RegisterModalProps
               )}
             />
             <Button type="submit" className="w-full">
-              S'inscrire
+              S'inscrire sur Agorize
             </Button>
           </form>
         </Form>

@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Calendar, Trophy, Users, Book, CheckCircle2 } from "lucide-react";
+import { Calendar, Trophy, Users, Book, CheckCircle2, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import ThemeCard from "@/components/ThemeCard";
 import CountdownTimer from "@/components/CountdownTimer";
 import RegisterModal from "@/components/RegisterModal";
 
+const AGORIZE_URL = "https://www.agorize.com/challenges/innove-ta-banque-2025?t=FmJo696k1moZitGf81GRXw&utm_source=innovation_freelancer&utm_medium=affiliate&utm_campaign=maxime_fr";
+
 export default function Home() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+  const handleCTAClick = () => {
+    window.open(AGORIZE_URL, '_blank');
+  };
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -17,6 +23,26 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center space-x-8">
+            <span className="text-xl font-bold">Innove ta Banque</span>
+            <div className="hidden md:flex space-x-6">
+              <a href="#themes" className="text-muted-foreground hover:text-primary">Thèmes</a>
+              <a href="#prizes" className="text-muted-foreground hover:text-primary">Prix</a>
+              <a href="#process" className="text-muted-foreground hover:text-primary">Participer</a>
+            </div>
+          </div>
+          <Button 
+            onClick={handleCTAClick}
+            className="bg-primary text-white hover:bg-primary/90"
+          >
+            Je participe <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative h-screen md:h-[85vh] flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden">
         <div className="container px-4 md:px-6">
@@ -33,13 +59,23 @@ export default function Home() {
               Imaginez la banque de demain. Construisez-la aujourd'hui.
             </p>
             <CountdownTimer targetDate="2025-03-17" />
-            <Button 
-              size="lg" 
-              className="mt-8 text-lg px-8 py-6"
-              onClick={() => setIsRegisterOpen(true)}
-            >
-              Participez Maintenant ! ✨
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6"
+                onClick={handleCTAClick}
+              >
+                Participez Maintenant ! ✨
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg"
+                className="text-lg"
+                onClick={() => window.location.href = '#process'}
+              >
+                En savoir plus
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -86,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* Prizes Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="prizes" className="py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Généreux Prix - Votre Innovation Récompensée 🎁</h2>
           <div className="max-w-3xl mx-auto space-y-6">
@@ -118,6 +154,15 @@ export default function Home() {
                 Les prix sont attribués sous forme de chèques cadeaux et sont partagés entre les membres de l'équipe.
               </p>
             </div>
+            <div className="text-center mt-8">
+              <Button 
+                size="lg"
+                onClick={handleCTAClick}
+                className="bg-primary text-white hover:bg-primary/90"
+              >
+                Je veux gagner ! 🏆
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -136,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* Themes Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="themes" className="py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Quatre Thèmes Passionnants 💖</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -161,11 +206,20 @@ export default function Home() {
               icon="leaf"
             />
           </div>
+          <div className="text-center mt-12">
+            <Button 
+              size="lg"
+              onClick={handleCTAClick}
+              className="bg-primary text-white hover:bg-primary/90"
+            >
+              Choisir mon thème <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* How to Participate Section */}
-      <section className="py-20 bg-white">
+      <section id="process" className="py-20 bg-white">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Comment Participer - Des Étapes Simples pour Commencer 🚀</h2>
           <div className="max-w-3xl mx-auto">
@@ -222,6 +276,15 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
+            <div className="text-center mt-12">
+              <Button 
+                size="lg"
+                onClick={handleCTAClick}
+                className="bg-primary text-white hover:bg-primary/90"
+              >
+                Commencer l'aventure ! 🚀
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -230,14 +293,24 @@ export default function Home() {
       <section className="py-20 bg-primary text-white">
         <div className="container px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Prêt(e) à Innover ? 💡</h2>
-          <Button 
-            variant="secondary" 
-            size="lg"
-            onClick={() => setIsRegisterOpen(true)}
-            className="text-lg px-8"
-          >
-            Participez Maintenant ! ✨
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              variant="secondary" 
+              size="lg"
+              onClick={handleCTAClick}
+              className="text-lg px-8"
+            >
+              Participez Maintenant ! ✨
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-lg border-white text-white hover:bg-white/20"
+              onClick={() => window.location.href = '#themes'}
+            >
+              Explorer les thèmes
+            </Button>
+          </div>
         </div>
       </section>
 
