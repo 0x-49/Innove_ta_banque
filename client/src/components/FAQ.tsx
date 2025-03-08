@@ -37,6 +37,9 @@ export default function FAQ() {
                 <li>EDHEC Business School</li>
                 <li>SKEMA Business School</li>
                 <li>Audencia, NEOMA, KEDGE</li>
+                <li>TBS Education, ICN Business School</li>
+                <li>Grenoble École de Management, ESSCA</li>
+                <li>Et bien d'autres écoles de commerce...</li>
               </ul>
             </div>
             <div>
@@ -45,8 +48,11 @@ export default function FAQ() {
                 <li>École Polytechnique</li>
                 <li>CentraleSupélec</li>
                 <li>Mines ParisTech</li>
-                <li>INSA (Lyon, Toulouse, Rennes)</li>
+                <li>INSA (Lyon, Toulouse, Rennes, Strasbourg)</li>
                 <li>Télécom Paris</li>
+                <li>Arts et Métiers ParisTech</li>
+                <li>UTC, UTT, UTBM</li>
+                <li>Et autres écoles du réseau Polytech...</li>
               </ul>
             </div>
             <div>
@@ -57,8 +63,23 @@ export default function FAQ() {
                 <li>Université Paris Cité</li>
                 <li>Université de Montpellier</li>
                 <li>Université Grenoble Alpes</li>
+                <li>Université de Bordeaux</li>
+                <li>Université de Strasbourg</li>
+                <li>Et l'ensemble des universités françaises...</li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-semibold">Écoles Spécialisées :</h4>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>ENSAD (Arts Décoratifs)</li>
+                <li>ENSCI Les Ateliers</li>
+                <li>École de Design Nantes Atlantique</li>
+                <li>Et autres écoles spécialisées...</li>
+              </ul>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Cette liste est non exhaustive. Tous les étudiants des établissements d'enseignement supérieur français peuvent participer au challenge.
+            </p>
           </div>
         </AccordionContent>
       </AccordionItem>
