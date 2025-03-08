@@ -19,8 +19,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary/10 to 
-        primary/5 overflow-hidden">
+      <section className="relative h-screen md:h-[85vh] flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden">
         <div className="container px-4 md:px-6">
           <motion.div 
             className="text-center space-y-6"
@@ -28,19 +27,19 @@ export default function Home() {
             animate={fadeIn.animate}
             transition={fadeIn.transition}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-primary">
-              Innove ta banque – Edition 5
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary">
+              Innove ta banque – Edition 5 🚀
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Imagine la banque de demain ! Rejoins le challenge pour réinventer le secteur bancaire.
+              Imaginez la banque de demain. Construisez-la aujourd'hui.
             </p>
             <CountdownTimer targetDate="2025-03-17" />
             <Button 
               size="lg" 
-              className="mt-8"
+              className="mt-8 text-lg px-8 py-6"
               onClick={() => setIsRegisterOpen(true)}
             >
-              Inscris-toi Maintenant
+              Participez Maintenant ! ✨
             </Button>
           </motion.div>
         </div>
@@ -56,8 +55,8 @@ export default function Home() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Calendar className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Dates Clés</h3>
-              <p>6 janvier – 17 mars 2025</p>
+              <h3 className="text-lg font-semibold mb-2">Date Limite</h3>
+              <p>17 mars 2025</p>
             </motion.div>
 
             <motion.div 
@@ -93,29 +92,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Themes Section */}
+      {/* Prizes Section */}
       <section className="py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Choisissez Votre Thématique</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Récompenses 🎁</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold mb-4">Jusqu'à 1 500€ de Chèques Cadeaux à Gagner !</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-2">
+                  <span className="text-2xl">🥇</span>
+                  <span>1ère Place: 1 500€ de chèques cadeaux</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-2xl">🥈</span>
+                  <span>2ème Place: 1 100€ de chèques cadeaux</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-2xl">🥉</span>
+                  <span>3ème Place: 800€ de chèques cadeaux</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-2xl">🏅</span>
+                  <span>4ème Place: 600€ de chèques cadeaux</span>
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-4">
+                Les prix sont attribués sous forme de chèques cadeaux et sont partagés entre les membres de l'équipe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Themes Section */}
+      <section className="py-20 bg-white">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Quatre Thèmes Passionnants 💖</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <ThemeCard 
-              title="La Banque de Demain"
-              description="Proposez des solutions écoresponsables et innovantes pour conquérir les jeunes clients."
+              title="Banque éco-responsable pour les jeunes"
+              description="Concevez des solutions bancaires durables pour attirer les jeunes clients soucieux de l'environnement. Mettez l'accent sur la transparence, les services numériques écologiques et les produits éthiques."
               icon="bank"
             />
             <ThemeCard 
-              title="Le Recrutement"
-              description="Réinventez le programme ambassadeur du Groupe BPCE pour attirer les jeunes talents."
+              title="Programme d'ambassadeurs BPCE"
+              description="Développez un programme d'ambassadeurs innovant pour engager et recruter la prochaine génération de talents pour le Groupe BPCE."
               icon="users"
             />
             <ThemeCard 
-              title="La Communication"
-              description="Boostez la visibilité de BPCE L'Observatoire et valorisez l'expertise du groupe."
+              title="Visibilité BPCE L'Observatoire"
+              description="Créez une stratégie de communication pour accroître la portée et l'impact des études économiques et des analyses d'experts de BPCE."
               icon="megaphone"
             />
             <ThemeCard 
-              title="Responsabilité Sociétale"
-              description="Réinventez l'habitat durable de demain avec des initiatives de rénovation énergétique."
+              title="Habitat durable de demain"
+              description="Développez des initiatives pour que BPCE encourage les rénovations écologiques des bâtiments et promeuve des solutions de logement durables."
               icon="leaf"
             />
           </div>
@@ -125,14 +157,17 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Prêt(e) à Réinventer la Banque de Demain ?</h2>
-          <Button 
-            variant="secondary" 
-            size="lg"
-            onClick={() => setIsRegisterOpen(true)}
-          >
-            Je M'inscris Maintenant
-          </Button>
+          <h2 className="text-3xl font-bold mb-6">Prêt(e) à Innover ? 💡</h2>
+          <div className="space-x-4">
+            <Button 
+              variant="secondary" 
+              size="lg"
+              onClick={() => setIsRegisterOpen(true)}
+              className="text-lg px-8"
+            >
+              Participez Maintenant ! ✨
+            </Button>
+          </div>
         </div>
       </section>
 
