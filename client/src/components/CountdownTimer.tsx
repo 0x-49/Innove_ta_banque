@@ -42,9 +42,9 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto my-8">
-      <p className="text-muted-foreground text-center mb-4">Temps restant pour soumettre votre idée:</p>
-      <div className="grid grid-cols-4 gap-4">
+    <div className="w-full max-w-2xl mx-auto my-4 md:my-8">
+      <p className="text-muted-foreground text-center mb-2 md:mb-4 text-sm md:text-base">Temps restant pour soumettre votre idée:</p>
+      <div className="grid grid-cols-4 gap-2 md:gap-4 px-2">
         {Object.entries(timeLeft).map(([unit, value]) => (
           <motion.div
             key={unit}
@@ -53,12 +53,12 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <span className="text-4xl font-bold text-primary">
+            <Card className="text-center p-2 md:p-4">
+              <CardContent className="p-0 md:pt-2">
+                <span className="text-2xl md:text-4xl font-bold text-primary block">
                   {String(value).padStart(2, '0')}
                 </span>
-                <p className="text-sm text-muted-foreground mt-1 capitalize">
+                <p className="text-xs md:text-sm text-muted-foreground mt-1 capitalize">
                   {unit}
                 </p>
               </CardContent>

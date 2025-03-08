@@ -325,15 +325,15 @@ export default function Home() {
               variant="secondary" 
               size="lg"
               onClick={handleCTAClick}
-              className="text-lg px-8"
+              className="text-lg px-8 bg-white text-primary hover:bg-white/90"
             >
               Participez Maintenant ! ✨
             </Button>
-            <Button
-              variant="outline"
+            <Button 
+              variant="secondary" 
               size="lg"
-              className="text-lg border-white text-white hover:bg-white/20"
-              onClick={() => window.location.href = '#themes'}
+              onClick={handleCTAClick}
+              className="text-lg px-8 bg-white text-primary hover:bg-white/90"
             >
               Explorer les thèmes
             </Button>
