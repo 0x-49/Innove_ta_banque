@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
-import { Calendar, Trophy, Users, Book } from "lucide-react";
+import { Calendar, Trophy, Users, Book, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import ThemeCard from "@/components/ThemeCard";
 import CountdownTimer from "@/components/CountdownTimer";
@@ -45,38 +45,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Overview Section */}
+      {/* Key Dates Section */}
       <section className="py-20 bg-white">
         <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Dates Clés à Retenir 🗓️</h2>
+          <div className="grid md:grid-cols-3 gap-8">
             <motion.div 
               className="flex flex-col items-center text-center p-6 rounded-lg bg-primary/5"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Calendar className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Date Limite</h3>
-              <p>17 mars 2025</p>
-            </motion.div>
-
-            <motion.div 
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-primary/5"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Trophy className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Prix</h3>
-              <p>Jusqu'à 1 500€ à gagner</p>
-            </motion.div>
-
-            <motion.div 
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-primary/5"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Users className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Équipes</h3>
-              <p>2 à 4 membres</p>
+              <h3 className="text-lg font-semibold mb-2">Phase d'idéation</h3>
+              <p>Date limite: 17 mars 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">Soumettez votre idée initiale</p>
             </motion.div>
 
             <motion.div 
@@ -85,8 +67,20 @@ export default function Home() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Book className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Mentorat</h3>
-              <p>Accompagnement expert</p>
+              <h3 className="text-lg font-semibold mb-2">Phase de mentorat</h3>
+              <p>7 avril - 5 mai 2025</p>
+              <p className="text-sm text-muted-foreground mt-2">Conseils d'experts pour les finalistes</p>
+            </motion.div>
+
+            <motion.div 
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-primary/5"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Trophy className="h-12 w-12 text-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Grande Finale</h3>
+              <p>13 mai 2025 à Paris</p>
+              <p className="text-sm text-muted-foreground mt-2">Présentation devant les dirigeants BPCE</p>
             </motion.div>
           </div>
         </div>
@@ -95,7 +89,7 @@ export default function Home() {
       {/* Prizes Section */}
       <section className="py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Récompenses 🎁</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Généreux Prix - Votre Innovation Récompensée 🎁</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">Jusqu'à 1 500€ de Chèques Cadeaux à Gagner !</h3>
@@ -116,6 +110,10 @@ export default function Home() {
                   <span className="text-2xl">🏅</span>
                   <span>4ème Place: 600€ de chèques cadeaux</span>
                 </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-2xl">🌟</span>
+                  <span>Prix Spécial BAC +2/+3: 400€ de chèques cadeaux</span>
+                </li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4">
                 Les prix sont attribués sous forme de chèques cadeaux et sont partagés entre les membres de l'équipe.
@@ -125,8 +123,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Themes Section */}
+      {/* Organization Section */}
       <section className="py-20 bg-white">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Organisé par le leader bancaire BPCE 🏦</h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="text-xl font-semibold mb-4">Innovez avec le 2ème groupe bancaire de France !</h3>
+            <p className="text-muted-foreground">
+              Le défi "Innove ta Banque" est présenté par Groupe BPCE, un acteur majeur du secteur bancaire français, regroupant Banque Populaire et Caisse d'Épargne. Avec plus de 35 millions de clients, BPCE façonne l'avenir de la finance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Themes Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Quatre Thèmes Passionnants 💖</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -150,6 +161,68 @@ export default function Home() {
               description="Développez des initiatives pour que BPCE encourage les rénovations écologiques des bâtiments et promeuve des solutions de logement durables."
               icon="leaf"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* How to Participate Section */}
+      <section className="py-20 bg-white">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Comment Participer - Des Étapes Simples pour Commencer 🚀</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="grid gap-6">
+              <motion.div 
+                className="flex items-start gap-4 p-4 rounded-lg bg-primary/5"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="rounded-full p-2 bg-primary/10">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Formez une Équipe (2-4 Membres)</h3>
+                  <p className="text-muted-foreground">Collaborez avec d'autres étudiants !</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="flex items-start gap-4 p-4 rounded-lg bg-primary/5"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="rounded-full p-2 bg-primary/10">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Choisissez Votre Thème</h3>
+                  <p className="text-muted-foreground">Sélectionnez le domaine qui vous inspire le plus.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="flex items-start gap-4 p-4 rounded-lg bg-primary/5"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="rounded-full p-2 bg-primary/10">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Développez Votre Idée en 10 Slides</h3>
+                  <p className="text-muted-foreground">Utilisez le modèle fourni et libérez votre créativité.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="flex items-start gap-4 p-4 rounded-lg bg-primary/5"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="rounded-full p-2 bg-primary/10">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Soumettez avant le 17 mars</h3>
+                  <p className="text-muted-foreground">Ne manquez pas la date limite !</p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
