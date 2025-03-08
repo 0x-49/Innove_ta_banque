@@ -5,6 +5,7 @@ import { useState } from "react";
 import ThemeCard from "@/components/ThemeCard";
 import CountdownTimer from "@/components/CountdownTimer";
 import RegisterModal from "@/components/RegisterModal";
+import FAQ from "@/components/FAQ";
 
 const AGORIZE_URL = "https://www.agorize.com/challenges/innove-ta-banque-2025?t=FmJo696k1moZitGf81GRXw&utm_source=innovation_freelancer&utm_medium=affiliate&utm_campaign=maxime_fr";
 
@@ -283,6 +284,25 @@ export default function Home() {
                 className="bg-primary text-white hover:bg-primary/90"
               >
                 Commencer l'aventure ! 🚀
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Questions Fréquentes</h2>
+          <div className="max-w-3xl mx-auto">
+            <FAQ />
+            <div className="text-center mt-12">
+              <Button
+                size="lg"
+                onClick={handleCTAClick}
+                className="bg-primary text-white hover:bg-primary/90"
+              >
+                Vous avez d'autres questions ? 💬
               </Button>
             </div>
           </div>
