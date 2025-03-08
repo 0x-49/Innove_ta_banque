@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface CountdownTimerProps {
   targetDate: string;
@@ -42,7 +43,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   return (
     <div className="w-full max-w-2xl mx-auto my-8">
-      <p className="text-white/70 text-center mb-4">Temps restant pour soumettre votre idée:</p>
+      <p className="text-muted-foreground text-center mb-4">Temps restant pour soumettre votre idée:</p>
       <div className="grid grid-cols-4 gap-4">
         {Object.entries(timeLeft).map(([unit, value]) => (
           <motion.div
@@ -52,14 +53,16 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 text-center">
-              <span className="text-4xl font-bold text-white">
-                {String(value).padStart(2, '0')}
-              </span>
-              <p className="text-sm text-white/50 mt-1 capitalize">
-                {unit}
-              </p>
-            </div>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <span className="text-4xl font-bold text-primary">
+                  {String(value).padStart(2, '0')}
+                </span>
+                <p className="text-sm text-muted-foreground mt-1 capitalize">
+                  {unit}
+                </p>
+              </CardContent>
+            </Card>
           </motion.div>
         ))}
       </div>
