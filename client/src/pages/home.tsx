@@ -184,27 +184,34 @@ export default function Home() {
       {/* Themes Section */}
       <section id="themes" className="py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Quatre Thèmes Passionnants 💖</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Quatre Thèmes Passionnants 💖</h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Choisissez votre thème et innovez dans l'un de ces domaines clés pour façonner l'avenir de la banque.
+          </p>
           <div className="grid md:grid-cols-2 gap-8">
             <ThemeCard 
-              title="Banque éco-responsable pour les jeunes"
-              description="Concevez des solutions bancaires durables pour attirer les jeunes clients soucieux de l'environnement. Mettez l'accent sur la transparence, les services numériques écologiques et les produits éthiques."
+              title="Innovation Digitale"
+              description="Solutions numériques pour transformer l'expérience bancaire. Mettez l'accent sur la transparence, les services numériques écologiques et les produits éthiques."
               icon="bank"
+              category="Innovation"
             />
             <ThemeCard 
-              title="Programme d'ambassadeurs BPCE"
-              description="Développez un programme d'ambassadeurs innovant pour engager et recruter la prochaine génération de talents pour le Groupe BPCE."
+              title="Sécurité & Confiance"
+              description="Protection des données et transactions sécurisées. Développez des solutions pour renforcer la confiance des clients dans leurs services bancaires."
               icon="users"
+              category="Finance"
             />
             <ThemeCard 
-              title="Visibilité BPCE L'Observatoire"
-              description="Créez une stratégie de communication pour accroître la portée et l'impact des études économiques et des analyses d'experts de BPCE."
+              title="Finance Inclusive"
+              description="Services bancaires accessibles à tous. Créez des solutions innovantes pour rendre les services financiers plus accessibles et équitables."
               icon="megaphone"
+              category="Communication"
             />
             <ThemeCard 
-              title="Habitat durable de demain"
-              description="Développez des initiatives pour que BPCE encourage les rénovations écologiques des bâtiments et promeuve des solutions de logement durables."
+              title="Finance Durable"
+              description="Solutions pour un impact environnemental positif. Développez des initiatives pour encourager les pratiques financières durables et responsables."
               icon="leaf"
+              category="RSE"
             />
           </div>
           <div className="text-center mt-12">
